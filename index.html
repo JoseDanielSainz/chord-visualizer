@@ -8,86 +8,150 @@
 </head>
 <body>
   <div class="container">
-    <h2>Chord Visualizer</h2>
-    <div class="selections">
-      <select name="root-note" id="root-note" onchange="selectRoot()">
-        <option value="0">Root</option>
-        <option value="1">C</option>
-        <option value="2">C# / Db</option>
-        <option value="3">D</option>
-        <option value="4">D# / Eb</option>
-        <option value="5">E</option>
-        <option value="6">F</option>
-        <option value="7">F# / Gb</option>
-        <option value="8">G</option>
-        <option value="9">G# / Ab</option>
-        <option value="10">A</option>
-        <option value="11">A# / Bb</option>
-        <option value="12">B</option>
-      </select>
+    <h1>Chord Visualizer</h1> 
+    <div class="selections"> 
+      <h3>Root note</h3>
+        <div class="root-note-selection">
+          <label for="C" class="radio">
+            <input type="radio" name="root-note" id="C" value="0">C
+          </label>
+          <label for="Db" class="radio">
+            <input type="radio" name="root-note" id="Db" value="1">Db
+          </label>
+          <label for="D" class="radio">
+            <input type="radio" name="root-note" id="D" value="2">D
+          </label>
+          <label for="Eb" class="radio">
+            <input type="radio" name="root-note" id="Eb" value="3">Eb
+          </label>
+          <label for="E" class="radio">
+            <input type="radio" name="root-note" id="E" value="4">E
+          </label>
+          <label for="F" class="radio">
+            <input type="radio" name="root-note" id="F" value="5">F
+          </label>
+          <label for="Gb" class="radio">
+            <input type="radio" name="root-note" id="Gb" value="6">Gb
+          </label>
+          <label for="G" class="radio">
+            <input type="radio" name="root-note" id="G" value="7">G
+          </label>
+          <label for="Ab" class="radio">
+            <input type="radio" name="root-note" id="Ab" value="8">Ab
+          </label>
+          <label for="A" class="radio">
+            <input type="radio" name="root-note" id="A" value="9">A
+          </label>
+          <label for="Bb" class="radio">
+            <input type="radio" name="root-note" id="Bb" value="10">Bb
+          </label>
+          <label for="B" class="radio">
+            <input type="radio" name="root-note" id="B" value="11">B
+          </label>
+          <input type="button" id="r-btn" value="Set root note">
+        </div>
 
-      <select name="triad" id="triad">
-        <option value="1">Maj</option>
-        <option value="2">Min</option>
-        <option value="3">Dim</option>
-        <option value="4">Aug</option>
-        <option value="5">Sus2</option>
-        <option value="6">Sus4</option>
-        <option value="7">5</option>
-      </select>
+      <h3>Triad / Base chord</h3>
+        <div class="base-chord-selection">
+          <label for="maj" class="radio">
+            <input type="radio" name="triad" id="maj" value="0">maj
+          </label>
+          <label for="min" class="radio">
+            <input type="radio" name="triad" id="min" value="1">min
+          </label>
+          <label for="dim" class="radio">
+            <input type="radio" name="triad" id="dim" value="2">dim
+          </label>
+          <label for="aug" class="radio">
+            <input type="radio" name="triad" id="aug" value="3">aug
+          </label>
+          <label for="sus2" class="radio">
+            <input type="radio" name="triad" id="sus2" value="4">sus2
+          </label>
+          <label for="sus4" class="radio">
+            <input type="radio" name="triad" id="sus4" value="5">sus4
+          </label>
+          <label for="five" class="radio">
+            <input type="radio" name="triad" id="five" value="6">5
+          </label>
+          <input type="button" id="t-btn" value="Set triad">
+        </div>
+      
+      <h3>7th</h3>
+        <div class="seventh-selection">
+          <label for="maj7" class="radio">
+            <input type="radio" name="seventh" id="maj7" value="0">maj7
+          </label>
+          <label for="min7" class="radio">
+            <input type="radio" name="seventh" id="min7" value="1">min7
+          </label>
+          <label for="dim7" class="radio">
+            <input type="radio" name="seventh" id="dim7" value="2">dim7
+          </label>
+          <input type="button" id="seventh-btn" value="Set 7th note">
+        </div>
 
-      <select name="seventh" id="seventh">
-        <option value="0">None</option>
-        <option value="1">maj7</option>
-        <option value="2">min7</option>
-        <option value="3">dim7</option>
-      </select>
-
-      <select name="extension" id="extension">
-        <option value="0">None</option>
-        <option value="1">add9</option>
-        <option value="2">add11</option>
-        <option value="3">add13</option>
-      </select>
-
+      <h3>Chord extension</h3>
+        <div class="extension-selection">
+          <label for="add9" class="radio">
+            <input type="radio" name="ext" id="add9" value="3">add9
+          </label>
+          <label for="add11" class="radio">
+            <input type="radio" name="ext" id="add11" value="4">add11
+          </label>
+          <label for="add13" class="radio">
+            <input type="radio" name="ext" id="add13" value="5">add13
+          </label>
+          <input type="button" id="ext-btn" value="Set chord extension">
+        </div>
     </div>
-
 
     <div class="piano">
       <div class="white-keys">
-        <div id="C1" class="white-key"></div>
-        <div id="D1" class="white-key"></div>
-        <div id="E1" class="white-key"></div>
-        <div id="F1" class="white-key"></div>
-        <div id="G1" class="white-key"></div>
-        <div id="A1" class="white-key"></div>
-        <div id="B1" class="white-key"></div>
-        <div id="C2" class="white-key"></div>
-        <div id="D2" class="white-key"></div>
-        <div id="E2" class="white-key"></div>
-        <div id="F2" class="white-key"></div>
-        <div id="G2" class="white-key"></div>
-        <div id="A2" class="white-key"></div>
-        <div id="B2" class="white-key"></div>
+        <div id="C1" class="white-key piano-key"></div>
+        <div id="D1" class="white-key piano-key"></div>
+        <div id="E1" class="white-key piano-key"></div>
+        <div id="F1" class="white-key piano-key"></div>
+        <div id="G1" class="white-key piano-key"></div>
+        <div id="A1" class="white-key piano-key"></div>
+        <div id="B1" class="white-key piano-key"></div>
+        <div id="C2" class="white-key piano-key"></div>
+        <div id="D2" class="white-key piano-key"></div>
+        <div id="E2" class="white-key piano-key"></div>
+        <div id="F2" class="white-key piano-key"></div>
+        <div id="G2" class="white-key piano-key"></div>
+        <div id="A2" class="white-key piano-key"></div>
+        <div id="B2" class="white-key piano-key"></div>
+        <div id="C3" class="white-key third-oct-whole piano-key"></div>
+        <div id="D3" class="white-key third-oct-whole piano-key"></div>
+        <div id="E3" class="white-key third-oct-whole piano-key"></div>
+        <div id="F3" class="white-key third-oct-whole piano-key"></div>
+        <div id="G3" class="white-key third-oct-whole piano-key"></div>
+        <div id="A3" class="white-key third-oct-whole piano-key"></div>
+        <div id="B3" class="white-key third-oct-whole piano-key"></div>
         
       </div>
 
       <div class="black-keys">
-        <div id="Db1" class="black-key"></div>
-        <div id="Eb1" class="black-key"></div>
-        <div id="Gb1" class="black-key"></div>
-        <div id="Ab1" class="black-key"></div>
-        <div id="Bb1" class="black-key"></div>
-        <div id="Db2" class="black-key"></div>
-        <div id="Eb2" class="black-key"></div>
-        <div id="Gb2" class="black-key"></div>
-        <div id="Ab2" class="black-key"></div>
-        <div id="Bb2" class="black-key"></div>
+        <div id="Db1" class="black-key piano-key"></div>
+        <div id="Eb1" class="black-key piano-key"></div>
+        <div id="Gb1" class="black-key piano-key"></div>
+        <div id="Ab1" class="black-key piano-key"></div>
+        <div id="Bb1" class="black-key piano-key"></div>
+        <div id="Db2" class="black-key piano-key"></div>
+        <div id="Eb2" class="black-key piano-key"></div>
+        <div id="Gb2" class="black-key piano-key"></div>
+        <div id="Ab2" class="black-key piano-key"></div>
+        <div id="Bb2" class="black-key piano-key"></div>
+        <div id="Db3" class="black-key piano-key third-oct-flat"></div>
+        <div id="Eb3" class="black-key piano-key third-oct-flat"></div>
+        <div id="Gb3" class="black-key piano-key third-oct-flat"></div>
+        <div id="Ab3" class="black-key piano-key third-oct-flat"></div>
+        <div id="Bb3" class="black-key piano-key third-oct-flat"></div>
         
       </div>
 
     </div>
-    
     
   </div>
 

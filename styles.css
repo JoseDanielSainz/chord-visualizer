@@ -6,41 +6,55 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: rgb(223, 223, 223);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
+  background-color: #dfdfdf;
   height: 100vh;
-  overflow: hidden;
   margin: 0;
 }
 
-.container h2 {
-  color: rgb(46, 46, 46);
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 78%;
+  margin: auto;
+}
+
+.container h1 {
+  color: #2e2e2e;
   font-size: 2rem;
   text-align: center;
 }
 
 .selections {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-bottom: 2rem;
+  width: inherit;
 }
 
-select {
-  border: none;
-  background-color: rgb(168, 168, 168);
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 5px;
-  color: rgb(51, 51, 51);
-  font-weight: bold;
+@media only screen and (max-width: 800px) {
+  .container {
+    width: 70%;
+  }
+
+  .third-oct-flat,
+  .third-oct-whole, 
+  #add13,#add11,#add9{
+    display: none
+  }
 }
 
-select:hover {
-  cursor: pointer;
+.radio {
+  margin-right: 5px;
+  color: #2e2e2e;
 }
 
-
+.piano {
+  display: flex;
+  justify-content: center;
+}
 
 .piano .white-keys {
   z-index: -1;
@@ -64,7 +78,7 @@ select:hover {
   display: flex;
   flex-direction: row;
   height: 200px;
-  top: 2px;
+  top: 1.5px;
 }
 
 .piano .black-key {
@@ -76,12 +90,8 @@ select:hover {
   border-bottom-right-radius: 3px;
 }
 
-.set {
-  background-color: red;
-}
-
 .piano #Db1 {
-  margin-left: 28px;
+  margin-left: 1px;
 }
 
 .piano #Eb1 {
@@ -118,4 +128,38 @@ select:hover {
 
 .piano #Bb2 {
   margin-left: 18px;
+}
+
+.piano #Db3 {
+  margin-left: 55px;
+}
+
+.piano #Eb3 {
+  margin-left: 18px;
+}
+
+.piano #Gb3 {
+  margin-left: 55px;
+}
+
+.piano #Ab3 {
+  margin-left: 18px;
+}
+
+.piano #Bb3 {
+  margin-left: 18px;
+}
+
+/* Highlighted notes class */
+
+.hi-root {
+  background-color: #F0442B;
+}
+
+.hi-triad {
+  background-color: #ff8800;
+}
+
+.hi-seventh {
+  background-color: #ffbb00;
 }
